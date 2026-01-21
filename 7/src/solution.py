@@ -22,5 +22,5 @@ def delete_director(session, director_id):
         session.delete(director)
         session.commit()
     else:
-        raise ValueError(f"Director with id {director_id} not found")
+        session.rollback()
 # END
